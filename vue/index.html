@@ -1,0 +1,65 @@
+<!doctype html>
+<html data-framework="vue">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+</head>
+
+<body>
+  <section class="todoapp" id="dynamic-component-demo">
+    <header class="header">
+      <h1>Surapong</h1>
+      Select language to Execute : <select v-model="script">
+        <option value="php">PHP</option>
+        <option value="node">NodeJS</option>
+      </select>
+    </header>
+    <section class="main">
+      <div class="demo">
+        <ul>
+          <li>
+            Test 1
+            <div>3, 5, 9, 15, X - Please create new function for finding X value
+              <div>
+                Input integer number : <input type="text" v-model="input1" id="input1" @keypress="inputNumber">
+                <button style="border:1" v-on:click="callApi" id="1">Execute</button> Result X : {{result.result1}}</div>
+            </div>
+          </li>
+          <li>
+            Test 2
+            <div>(Y + 24)+(10 × 2) = 99 - Please create new function for finding Y value
+              <div>
+                Input Y as integer number : <input type="text" v-model="input2" id="input2" @keypress="inputNumber">
+                <button style="border:1" v-on:click="callApi" id="2">Execute</button>Result Y : {{result.result2}}</div>
+            </div>
+
+          </li>
+          <li>
+            Test 2
+            <div>If 1 = 5 , 2 = 25 , 3 = 325 , 4 = 4325 Then 5 = X - Please create new function for finding X value
+              <div>
+                Input integer number : <input type="text" v-model="input3" id="input3" @keypress="inputNumber">
+                <button class="destroy" v-on:click="callApi" id="3">Execute</button>Result X : {{result.result3}}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+    <footer class="footer" v-cloak>
+
+    </footer>
+  </section>
+  <footer class="info">
+    <p>Click Execute to see result , change select box for choosing API language</p>
+  </footer>
+
+  <script src="./vue.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
